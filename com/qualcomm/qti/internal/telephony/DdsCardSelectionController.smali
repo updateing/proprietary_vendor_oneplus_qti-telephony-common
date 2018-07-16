@@ -1203,9 +1203,6 @@
 
     const/4 v8, 0x0
 
-    .line 316
-    invoke-virtual {v5, v6, v7, v8}, Lcom/android/internal/telephony/Phone;->registerForPhoneObjectSwitch(Landroid/os/Handler;ILjava/lang/Object;)V
-
     .line 306
     add-int/lit8 v2, v2, 0x1
 
@@ -3471,9 +3468,7 @@
     .line 1524
     iget-object v3, p0, Lcom/qualcomm/qti/internal/telephony/DdsCardSelectionController;->mIccRecords:Lcom/android/internal/telephony/uicc/IccRecords;
 
-    invoke-virtual {v3}, Lcom/android/internal/telephony/uicc/IccRecords;->is_test_card()Z
-
-    move-result v1
+    const/4 v1, 0x0
 
     .line 1519
     :cond_2f
@@ -3733,11 +3728,8 @@
 
     .line 1390
     :cond_1a
-    invoke-static {}, Lcom/android/internal/telephony/PhoneFactory;->oemGetPhoneSwitcher()Lcom/android/internal/telephony/PhoneSwitcher;
 
-    move-result-object v1
-
-    check-cast v1, Lcom/qualcomm/qti/internal/telephony/QtiPhoneSwitcher;
+    const/4 v1, 0x0
 
     .line 1391
     .local v1, "mPhoneSwitcher":Lcom/qualcomm/qti/internal/telephony/QtiPhoneSwitcher;
@@ -4466,8 +4458,6 @@
     iget-object v2, p0, Lcom/qualcomm/qti/internal/telephony/DdsCardSelectionController;->mHandler:Landroid/os/Handler;
 
     const/16 v3, 0x13
-
-    invoke-virtual {v1, v2, v3, v5}, Lcom/android/internal/telephony/uicc/IccRecords;->registerForTestCard(Landroid/os/Handler;ILjava/lang/Object;)V
 
     .line 1473
     :cond_84
@@ -5978,8 +5968,6 @@
     iget-object v3, p0, Lcom/qualcomm/qti/internal/telephony/DdsCardSelectionController;->mIccRecords:Lcom/android/internal/telephony/uicc/IccRecords;
 
     iget-object v4, p0, Lcom/qualcomm/qti/internal/telephony/DdsCardSelectionController;->mHandler:Landroid/os/Handler;
-
-    invoke-virtual {v3, v4}, Lcom/android/internal/telephony/uicc/IccRecords;->unregisterForTestCard(Landroid/os/Handler;)V
 
     .line 783
     :cond_39

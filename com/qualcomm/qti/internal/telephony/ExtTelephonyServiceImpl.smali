@@ -2566,24 +2566,6 @@
 
     .prologue
     .line 351
-    invoke-static {p1}, Lcom/android/internal/telephony/PhoneFactory;->getPhone(I)Lcom/android/internal/telephony/Phone;
-
-    move-result-object v0
-
-    .line 352
-    .local v0, "p":Lcom/android/internal/telephony/Phone;
-    if-eqz v0, :cond_e
-
-    invoke-virtual {v0}, Lcom/android/internal/telephony/Phone;->is_test_card()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_e
-
-    .line 353
-    const/4 v1, 0x1
-
-    return v1
 
     .line 356
     :cond_e
