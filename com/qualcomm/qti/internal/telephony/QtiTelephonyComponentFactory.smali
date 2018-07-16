@@ -570,6 +570,38 @@
     return-object v0
 .end method
 
+.method public makeSubscriptionInfoUpdater(Landroid/content/Context;[Lcom/android/internal/telephony/Phone;[Lcom/android/internal/telephony/CommandsInterface;)Lcom/android/internal/telephony/SubscriptionInfoUpdater;
+    .registers 6
+    .param p1, "context"    # Landroid/content/Context;
+    .param p2, "phones"    # [Lcom/android/internal/telephony/Phone;
+    .param p3, "ci"    # [Lcom/android/internal/telephony/CommandsInterface;
+
+    .prologue
+    .line 224
+    sget-object v0, Lcom/qualcomm/qti/internal/telephony/QtiTelephonyComponentFactory;->LOG_TAG:Ljava/lang/String;
+
+    const-string/jumbo v1, "makeSubscriptionInfoUpdater 4"
+
+    invoke-static {v0, v1}, Landroid/telephony/Rlog;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    .line 225
+    new-instance v0, Lcom/qualcomm/qti/internal/telephony/QtiSubscriptionInfoUpdater;
+
+    invoke-static {}, Lcom/android/internal/os/BackgroundThread;->get()Lcom/android/internal/os/BackgroundThread;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Lcom/android/internal/os/BackgroundThread;->getLooper()Landroid/os/Looper;
+
+    move-result-object v1
+
+    invoke-static {v1, p1, p2, p3}, Lcom/qualcomm/qti/internal/telephony/QtiSubscriptionInfoUpdater;->init(Landroid/os/Looper;Landroid/content/Context;[Lcom/android/internal/telephony/Phone;[Lcom/android/internal/telephony/CommandsInterface;)Lcom/qualcomm/qti/internal/telephony/QtiSubscriptionInfoUpdater;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
 .method public makeSubscriptionInfoUpdater(Landroid/os/Looper;Landroid/content/Context;[Lcom/android/internal/telephony/Phone;[Lcom/android/internal/telephony/CommandsInterface;)Lcom/android/internal/telephony/SubscriptionInfoUpdater;
     .registers 7
     .param p1, "looper"    # Landroid/os/Looper;
