@@ -2590,18 +2590,7 @@
     if-eqz v5, :cond_54
 
     .line 1784
-    iget-object v5, p0, Lcom/qualcomm/qti/internal/telephony/DdsCardSelectionController;->mWifiManager:Landroid/net/wifi/WifiManager;
-
-    invoke-virtual {v5}, Landroid/net/wifi/WifiManager;->getWifiApConfiguration()Landroid/net/wifi/WifiConfiguration;
-
-    move-result-object v5
-
-    iput-object v5, p0, Lcom/qualcomm/qti/internal/telephony/DdsCardSelectionController;->mWifiConfig:Landroid/net/wifi/WifiConfiguration;
-
-    .line 1785
-    iget-object v5, p0, Lcom/qualcomm/qti/internal/telephony/DdsCardSelectionController;->mWifiConfig:Landroid/net/wifi/WifiConfiguration;
-
-    iget v0, v5, Landroid/net/wifi/WifiConfiguration;->apBand:I
+    const/4 v0, 0x1
 
     .line 1786
     if-nez v0, :cond_4e
